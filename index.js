@@ -3,10 +3,7 @@ if (navigator && navigator.serviceWorker) {
     .register("service-worker.js", {
       scope: "."
     })
-    .then(registration => {
-      console.log("Service worker has been registered ", registration);
-    })
-    .catch(error => {
-      console.log("Error during registering service worker", error);
-    });
+    .then(registration =>
+      console.log("The service worker has been registered ", registration)
+    );
 }
