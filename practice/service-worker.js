@@ -1,11 +1,11 @@
 importScripts("https://unpkg.com/dexie@2.0.3/dist/dexie.js");
-const AWAIT_TIME = 1000;
-const CACHE = "strategy-example";
+// const AWAIT_TIME = 1000;
+// const CACHE = "strategy-example";
 
 const db = new Dexie("demo06");
 
 db.version(1).stores({
-  exp: "date"
+  time: "exp"
 });
 
 const precache = () => caches.open(CACHE).then(cache => cache.addAll(["/"]));
@@ -34,8 +34,9 @@ const fromCache = request =>
   );
 
 const checkInDb = () => {
-  db.table('exp')
-    .then(console.log);
+  localStorage.getItem('expTime')
+  // db.table('exp')
+  //   .then(console.log);
 }
 
 // On install, cache some resource.
