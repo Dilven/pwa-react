@@ -1,6 +1,8 @@
-const db = new Dexie("practice");
-const CACHE = "strategy-example";
+importScripts("https://unpkg.com/dexie@2.0.3/dist/dexie.js");
 const AWAIT_TIME = 1000;
+const CACHE = "strategy-example";
+
+const db = new Dexie("practice");
 
 db.version(1).stores({
   exp: "date"
